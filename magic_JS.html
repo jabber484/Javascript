@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<title>Magic</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="Bootstrap Practice">
+	<meta name="author" content="Johnson">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="asset/animate.css">
+	<style>
+		body {
+			font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+			overflow-x: hidden;
+			position: relative;
+			line-height: 1.6;
+		}
+		.search {
+			position: relative;
+			font-size: 2.5rem;
+			margin-left: 10px;
+			margin-top: 4px;
+		}
+		.btn-menu {
+			margin-top:8px;
+			border: solid 2px;
+			border-color: #25B6CE;
+			background-color: #f8f8f8;
+		}
+		.banner {
+			text-align: center;
+			color: #fff;
+			font-weight: bold;
+			overflow: hidden;		
+			background-image: url("https://keep.edu.hk/assets/about/missionvision_banner-d7090d35df7f57d7c4f28c5799bf13a9.jpg");
+			padding-top: 10rem;
+			font-size: 2rem;
+			padding-bottom: 10rem;
+			line-height: 100%;
+		}
+		h1 {
+			font-size: inherit;
+			margin-left: 15px;
+			margin-right: 15px;
+		}
+		.info {
+			padding-top: 3rem;
+			padding-bottom: 5rem;	
+		}	
+		.navbar {
+			margin-bottom: 0px;
+		}
+		.info-content {
+			margin-top:20px;
+			background-color: white;
+			padding: 2rem;
+			padding-left:10px;
+		}
+		.elemental {
+			padding-top: 3rem;
+			text-align: center;
+			overflow: hidden;		
+			background-color: white;
+		}
+		.magic-element {
+			display: block;	
+			margin: auto;
+			max-height: 12rem; 
+			width: auto;
+		}
+		.magic-name {
+			display: block;	
+			margin: auto;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+			max-height: 2rem; 
+			width: auto;
+		}
+		.elemental-description {
+			margin-top: 1rem;
+			margin-bottom: 3rem;
+		}
+		.submenu-name {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			max-height: 1.3rem;
+		}
+		a {
+			color:#333333;
+			display: block;
+		}	
+		.footer {
+			font-size: 0.875rem;
+			margin-bottom: 2rem;
+		}
+		.slide-info {
+			padding-top: 2rem;
+		}
+		.slide-word {	
+			padding-left: 1rem;
+			padding-bottom: 1rem;
+			margin-bottom: 7rem;
+			border-left: solid 4px;
+			text-align: justify;
+		}		
+		.slide-name {
+			font-size: 20px;
+			font-weight: bold;
+		}		
+		.slide-photo {
+			position: absolute;
+			bottom: 0px;
+			right: -11.33rem;
+			max-width: 13rem;
+			height:auto;
+		}	
+		.copyright {
+			margin-top: 2rem;
+			text-align: center;
+		}
+		.menu {
+			position: relative;
+			float: left;
+			margin: 15px;;
+		}		
+		.submenu {
+			position: absolute;
+			top: 50px;
+			display: none;
+			background-color: #f8f8f8;
+		}		
+		.submenu-btn {
+			background-color: transparent;
+			border:none;
+		}
+		.submenu-item {
+			padding-left: 15px;
+			padding-right: 15px;
+			text-align: left;
+			white-space: nowrap;
+		}	
+		a:hover	{ 
+			color: blue;
+		} 
+		.dropdown:hover .submenu {
+			display: block;
+		}
+		.dropdown {
+			float: left;
+			position: relative;
+			display: inline-block;
+		}
+		@media screen and (min-width: 992px){
+			col-md-2 {
+				text-align: right;
+			}
+		}
+		@media screen and (min-width: 768px){
+			.banner {
+				font-size: 3.5rem;
+			}
+		}
+	</style>
+  </head>
+  
+  <body>
+	<nav class="navbar navbar-default" style="-webkit-box-shadow: 0 3px 5px rgba(0,0,0,0.1);">
+		<div class="container">	
+			<div class="navbar-header">	
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<div class="dropdown" style="width: auto;">
+					<button class="submenu-btn"><img href="./magic.html" src="asset/logo.png"></button>
+					<div id="submenu-logo" class="submenu">
+						<a href="#"><img class="submenu-item submenu-name" src="asset/elemental_fire_menu.png"></a>
+						<a href="#"><img class="submenu-item submenu-name" src="asset/elemental_water_menu.png"></a>
+						<a href="#"><img class="submenu-item submenu-name" src="asset/elemental_thunder_menu.png"></a>
+						<a href="#"><img class="submenu-item submenu-name" src="asset/elemental_earth_menu.png"></a>
+					</div>
+				</div>				
+			</div>	
+			<div class="collapse navbar-collapse" id="Navbar">			
+				<div class="dropdown">
+					<button class="submenu-btn menu"><a href="#">About</a></button>
+					<div class="submenu">
+						<a href="#"><p class="submenu-item">Vission & Mission</p></a>
+						<a href="#"><p class="submenu-item">Parnters</p></a>
+						<a href="#"><p class="submenu-item">Collaborator's Projects</p></a>
+						<a href="#"><p class="submenu-item">Team</p></a>
+					</div>
+				</div>	
+				<div class="menu"><a href="#">News & Events</a></div>
+				<div class="menu"><a href="#">Contect Us</a></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Login</a></li>
+					<li><button type="button" class="btn btn-menu" href="#">Sign Up</button></li>
+					<li class="search" ><div class="glyphicon glyphicon-search" style="line-height: 1.6;"></div></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	
+	<section class="banner">
+		<div class="container">
+			<h1 id="banner1" class="animated bounceInRight"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+			<h1 id="banner2" style="display:none;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+			<h1 id="banner3" style="display:none;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+		</div>
+	</section>
+	<script>
+		var maxBanner = 3;
+		var currentBanner = 1;
+		var ani_in,ani_out;
+		
+		function bannerAni() {
+			switch (currentBanner) {
+				case 1:
+					ani_out = "animated bounceOutLeft";	
+					ani_in = "animated bounceInUp";
+					break;
+					
+				case 2:
+					ani_out = "animated bounceOutDown";		
+					ani_in = "animated bounceInLeft";	
+					break;	
+				case 3:
+					ani_out = "animated bounceOutLeft";
+					ani_in = "animated bounceInRight";	
+					break;						
+			}
+			document.getElementById("banner"+currentBanner).className = ani_out;
+			
+			setTimeout(function() {
+				document.getElementById("banner"+currentBanner).style.display = "none";				
+				currentBanner = currentBanner % maxBanner +1;
+				document.getElementById("banner"+currentBanner).style.display = "block";			
+				document.getElementById("banner"+currentBanner).className = ani_in;
+			},500);	
+			
+		}
+		
+		setInterval(function(){bannerAni()},6000);
+	</script>
+	
+	<section class="info" style="background-color: lightblue;">
+		<div class="container">
+			<div class="col-md-6 text-center">
+				<img style="width: 100%; max-width: 32rem" src="asset/home_what-713573153e344af1a6dad63717e6ef96.png">
+			</div>
+			<div class="col-md-6">
+				<div class="info-content">
+					<h3 style="text-align: center;margin-top: 0px;"><b>Magic is real?</b><br></h3>
+					<h4 style="text-align: center;">Hell yeah, it is.<br><br></h4>
+					<ul style="text-align: justify;">
+						<li><h5>For more than 80 years, Fire Magic has been building the world's finest outdoor grills.</h5></li>					
+						<li><h5>There is nothing softer and weaker than water, and yet there is nothing better for attacking hard and strong things.</h5></li>
+						<li><h5>Earth corrupt the Sandman's sand, turning it black, taking control of it and use it to give people nightmares.</h5></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<section class="info">
+		<div class="container">
+			<div class="col-md-3 elemental">
+				<a href="#"><img class="magic-element"  onmouseover="hover(1,1,this)" onmouseout="hover(1,2,this)" src="asset/ball_fire_a.png"></a>
+				<a href="#"><img class="magic-name" src="asset/elemental_fire.png"></a>
+				<p class="elemental-description">Enter a keyword and search. One click will open the door to the amazing world of academia.</p>
+				<a href="#" class="btn btn-default" href="#"><b>Learn more</b></a>
+			</div>
+			<div class="col-md-3 elemental" style="text-align: center;">
+				<a href="#"><img class="magic-element" onmouseover="hover(2,1,this)" onmouseout="hover(2,2,this)" src="asset/ball_water_a.png"></a>
+				<a href="#"><img class="magic-name" src="asset/elemental_water.png"></a>
+				<p class="elemental-description">Enter a keyword and search. One click will open the door to the amazing world of academia.</p>
+				<a href="#" class="btn btn-default" href="#"><b>Learn more</b></a>
+			</div>
+			<div class="col-md-3 elemental" style="text-align: center;">
+				<a href="#"><img class="magic-element" onmouseover="hover(3,1,this)" onmouseout="hover(3,2,this)" src="asset/ball_thunder_a.png"></a>
+				<a href="#"><img class="magic-name" src="asset/elemental_thunder.png"></a>
+				<p class="elemental-description">Enter a keyword and search. One click will open the door to the amazing world of academia.</p>
+				<a href="#" class="btn btn-default" href="#"><b>Learn more</b></a>
+			</div>
+			<div class="col-md-3 elemental">
+				<a href="#"><img class="magic-element" onmouseover="hover(4,1,this)" onmouseout="hover(4,2,this)" src="asset/ball_earth_a.png"></a>
+				<a href="#"><img class="magic-name" src="asset/elemental_earth.png"></a>
+				<p class="elemental-description">Enter a keyword and search. One click will open the door to the amazing world of academia.</p>
+				<a href="#" class="btn btn-default" href="#"><b>Learn more</b></a>
+			</div>	
+		</div>
+	</section>
+	<script>
+		function hover(x,y,z) {
+			switch (x) {
+				case 1:
+					x = "fire";
+					break;
+				case 2:
+					x = "water";
+					break;		
+				case 3:
+					x = "thunder";
+					break;
+				case 4:
+					x = "earth";
+					break;					
+			}
+		
+			if (y==1) {
+				z.src = "asset/ball_"+x+"_b.png";	
+			} else if (y==2) {
+				z.src = "asset/ball_"+x+"_a.png";	
+			}
+		}
+	</script>
+	
+ 	<section class="slide-info" style="background-color: lightblue;">
+		<div class="container">
+			<!--Slide1-->
+			<div id="slide1" class="animated bounceInRight">
+				<div class="col-xs-7">
+					<div class="slide-word">
+						<h3 align="center" >Well mate, at least you tried. <br>A sorceress turned me down once. Want to hear the story? </h3>
+						<div class="slide-name" align="center">- A Witcher</div>
+					</div>		
+					<img class=" slide-photo" src="asset/geralt.png">					
+				</div>	
+			</div>
+			<!--Slide2-->
+			<div id="slide2" class="" style="display: none;">
+				<div class="col-xs-7">
+					<div class="slide-word">
+						<h3 align="center" >Well mate, at least you tried. <br>A Witcher turned me down once. <br>Want to hear the story? </h3>
+						<div class="slide-name" align="center">- A Sorceress</div>
+					</div>		
+					<img class=" slide-photo" src="asset/geralt.png">					
+				</div>		
+			</div>			
+		</div>	
+	</section> 
+	<script>
+		var maxSlide = 2;
+		var currentSlide = 1;
+		
+		function Ani() {
+			document.getElementById("slide"+currentSlide).className = "animated bounceOutLeft";
+			
+			setTimeout(function() {
+				document.getElementById("slide"+currentSlide).style.display = "none";				
+				currentSlide = currentSlide % maxSlide +1;
+				document.getElementById("slide"+currentSlide).style.display = "block";			
+				document.getElementById("slide"+currentSlide).className = "animated bounceInRight";
+			},500);			
+		}
+		setInterval(function(){Ani()},6000);
+	</script>
+	
+	<section class="footer">
+		<div class="container">
+			<div class="row" style="display:block;">
+				<div class="col-md-6" style="margin-top: 0.8rem;">
+					<img class="img-responsive" src="asset/logo.png" style="max-height: 3rem;">
+					<div>6/F, Skyrim Building</div>
+					<div>College of Winterhold</div>
+					<div>Shatin, N.T. Winterhold</div>
+				</div>
+				<div class="col-md-2" style="margin-top: 1.2rem;">
+					<a href="#">Media Kit</a>
+					<a href="#">FAQ</a>
+					<a href="#">Terms & Conditions</a>
+					<a href="#">Feedback</a>
+				</div>
+				<div class="col-md-2" style="margin-top: 1.2em;">
+					<a href="#">KEEPFire</a>
+					<a href="#">KEEPWater</a>
+					<a href="#">KEEPThunder</a>
+					<a href="#">KEEPEarth</a>	
+				</div>
+				<div class="col-md-2" style="margin-top: 1.2rem;">
+					<a href="#">About KEEP</a>
+					<a href="#">News & Events</a>
+					<a href="#">Team</a>
+					<a href="#">Contact Us</a>
+					<a href="#">Careers	</a>
+				</div>
+			</div>
+			<div class="copyright" >Copyright © 2014-2017 KEEP. College of Winterhold. All rights reserved.</div>
+		</div>
+	</section> 
+  </body>
+  
+</html> 
+ 
