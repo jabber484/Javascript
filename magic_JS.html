@@ -209,44 +209,42 @@
 	
 	<section class="banner">
 		<div class="container">
-			<h1 id="banner1" class="animated bounceInRight"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+			<h1 id="banner1" style="display:block;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
 			<h1 id="banner2" style="display:none;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
 			<h1 id="banner3" style="display:none;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
 		</div>
 	</section>
 	<script>
-		var maxBanner = 3;
-		var currentBanner = 1;
-		var ani_in,ani_out;
+		var val = 0;
+		var timea;
 		
-		function bannerAni() {
-			switch (currentBanner) {
-				case 1:
-					ani_out = "animated bounceOutLeft";	
-					ani_in = "animated bounceInUp";
-					break;
-					
-				case 2:
-					ani_out = "animated bounceOutDown";		
-					ani_in = "animated bounceInLeft";	
-					break;	
-				case 3:
-					ani_out = "animated bounceOutLeft";
-					ani_in = "animated bounceInRight";	
-					break;						
-			}
-			document.getElementById("banner"+currentBanner).className = ani_out;
-			
-			setTimeout(function() {
-				document.getElementById("banner"+currentBanner).style.display = "none";				
-				currentBanner = currentBanner % maxBanner +1;
-				document.getElementById("banner"+currentBanner).style.display = "block";			
-				document.getElementById("banner"+currentBanner).className = ani_in;
-			},500);	
-			
+		function B(){
+			val=3000;
+			var timeb = setInterval(function(){
+				document.getElementById("banner2").style.transform = "translate3d("+val+"px, 0, 0)";
+				val=val-20;
+				if(val<=0){		
+					clearInterval(timeb);
+				}
+			},10);		
 		}
 		
-		setInterval(function(){bannerAni()},6000);
+		function A(){
+		setTimeout(function(){ 
+			setInterval(function(){ //B1 go left
+				document.getElementById("banner1").style.transform = "translate3d("+val+"px, 0, 0)";
+				val=val-20;
+				if(val==-3000){
+					clearInterval(timea);
+					document.getElementById("banner1").style.display = "none";
+					document.getElementById("banner2").style.transform = "translate3d(3000px, 0, 0)";
+					document.getElementById("banner2").style.display = "block";
+					B();
+				}	
+			},10);	
+		},6000);
+		}
+		timea = A();
 	</script>
 	
 	<section class="info" style="background-color: lightblue;">
