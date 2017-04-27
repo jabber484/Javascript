@@ -216,35 +216,33 @@
 	</section>
 	<script>
 		var val = 0;
-		var timea;
+		var timea,timeb;
 		
 		function B(){
-			val=3000;
-			var timeb = setInterval(function(){
-				document.getElementById("banner2").style.transform = "translate3d("+val+"px, 0, 0)";
+			val=1000;
+			timeb = setInterval(function(){ //B1 go left
+				document.getElementById("banner1").style.transform = "translate3d("+val+"px, 0, 0)";
 				val=val-20;
-				if(val<=0){		
+				if(val==0){
 					clearInterval(timeb);
-				}
-			},10);		
+					A();
+				}	
+			},10);			
 		}
 		
 		function A(){
 		setTimeout(function(){ 
-			setInterval(function(){ //B1 go left
+			timea = setInterval(function(){ //B1 go left
 				document.getElementById("banner1").style.transform = "translate3d("+val+"px, 0, 0)";
 				val=val-20;
 				if(val==-3000){
 					clearInterval(timea);
-					document.getElementById("banner1").style.display = "none";
-					document.getElementById("banner2").style.transform = "translate3d(3000px, 0, 0)";
-					document.getElementById("banner2").style.display = "block";
 					B();
 				}	
 			},10);	
 		},6000);
 		}
-		timea = A();
+		A();
 	</script>
 	
 	<section class="info" style="background-color: lightblue;">
