@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Password Validation</title>
+		<meta charset="UTF-8">
+		<meta name="description" content="Password Validation">
+		<meta name="author" content="Johnson">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+		<link rel="stylesheet" type="text/css" href="asset/animate.css">
+
+		<style>
+		</style>
+	</head>
+	
+	<body>
+		<div style="padding-top:30px">
+			<div class="container">
+				<form method="post" onsubmit="validate(this);">  
+					<table class="table table-striped table-bordered">
+						<thead>
+							<tr><th>Password Validation<span style="float:right;">By Johnson</span></th></tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+								<input type="password" id="password" name="password" autofocus></input>
+								<button class="btn">Submit</button>
+								<button onclick="showpw();" type="button" class="btn">Show password</button>
+								</td>
+							</tr>
+							<tr><td>Rule 1: Must contain at least 8 characters</td></tr>
+							<tr><td>Rule 2: Must contain <b>BOTH</b> upper and lower-case characters</td></tr>
+							<tr><td>Rule 3: Must contain only letters, numbers and underscores</td></tr>
+						</tbody>
+					</table>
+				</form>  
+			</div>	
+		</div>
+		
+		<script>
+			function validate(form) {
+				var input = form.password.value;
+				if(input!=""){
+					re=/.{8,}/;
+					if(re.test(input)){
+						re= /[a-z]/;
+						re2= /[A-Z]/;
+						if(re.test(input) & re2.test(input)){
+							re= /\W/;
+							if(!(re.test(input)))
+								alert("Valid");
+							else
+								alert("Password must contain only letters, numbers and underscores");							
+						} else
+							alert("Password must contain BOTH upper and lower-case characters");	
+				
+					} else
+						alert("Password must contain at least 8 characters");	
+				} else 
+					alert("Password cannot be empty!");
+			}
+			
+			function showpw() {
+				x = document.getElementById("password");
+				if(x.type=="password")
+					x.setAttribute('type', 'text');
+				else
+					x.setAttribute('type', 'password');
+			}
+		</script>
+	</body>
+	
+</html>	
