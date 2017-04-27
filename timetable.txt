@@ -1,0 +1,86 @@
+<style>
+	tr {
+		width:20%;
+	}
+</style>
+<table class="table table-bordered table-responsive">
+	<thead>
+		<tr><th>Monday</th><th>Tuesday</th><th>Wednesday</th><th>Thursday</th><th>Friday</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>
+			<table class="table table-responsive table-striped table-bordered" style="margin:0px;">
+				<tr><td>
+					<div>09:30 - 1115</div>
+					<div>ENGG 2430</div>
+				</td></tr>
+				<tr><td>
+				<div>12:30 - 1315</div>
+				<div>CSCI 2100</div>
+				</td></tr>	
+				<tr><td>
+				<div>17:30 - 1815</div>
+				<div>CSCI 2100</div>
+				</td></tr>				
+			</table>	
+			</td>
+			<td>
+			<table class="table table-responsive table-striped table-bordered" style="margin:0px;">
+				<tr><td>
+					<div>11:30 - 1215</div>
+					<div>ELTU 2014</div>
+				</td></tr>
+				<tr><td>
+				<div>12:30 - 1415</div>
+				<div>CSCI 2100</div>
+				</td></tr>	
+				<tr><td>
+				<div>14:30 - 1615</div>
+				<div>ENGG 2601</div>
+				</td></tr>		
+				<tr><td>
+				<div>16:30 - 1715</div>
+				<div>ENGG 2602</div>
+				</td></tr>						
+			</table>	
+			</td>
+			<td>
+			<table class="table table-responsive table-striped table-bordered" style="margin:0px;">
+				<tr><td>
+					<div>09:30 - 1115</div>
+					<div>ENGG 2430</div>
+				</td></tr>
+				<tr><td>
+				<div>12:30 - 1315</div>
+				<div>CSCI 2100</div>
+				</td></tr>	
+				<tr><td>
+				<div>17:30 - 1815</div>
+				<div>CSCI 2100</div>
+				</td></tr>				
+			</table>	
+			</td>
+			<td>
+			<table class="table table-responsive table-striped table-bordered" style="margin:0px;">
+				<tr><td>
+					<div>09:30 - 1115</div>
+					<div>ENGG 2430</div>
+				</td></tr>
+				<tr><td>
+				<div>16:30 - 1815</div>
+				<div>UGED 1815</div>
+				</td></tr>				
+			</table>	
+			</td>
+			<td>
+			<table class="table table-responsive table-striped table-bordered" style="margin:0px;">
+				<tr><td>
+					<div>Day Off :D</div>
+				</td></tr>
+			
+			</table>	
+			</td>
+		</tr>
+	</tbody>
+</table>	
