@@ -10,35 +10,27 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
-		<link rel="stylesheet" type="text/css" href="asset/animate.css">
-		
+	
 		<script>		
-		function loadDoc(){
-			var x = window.location.search.split('dd=')[1];
-			var socket = new XMLHttpRequest();
-			socket.onreadystatechange = function() {
-			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("content").innerHTML = this.responseText;
-			}
-			};
-			if(x==0)
-			socket.open("GET", "timetable.txt", true);
-			else if(x==1)
-			socket.open("GET", "cv.txt", true);
-			else return false;
-			socket.send();		
-		}
+		$(document).ready(function(){
+			$.ajax({url: "timetable.txt", success: function(result){
+				$("#tb").html(result);
+			}});
+			$.ajax({url: "cv.txt", success: function(result){
+				$("#cv").html(result);
+			}});
+		});
 		</script>		
 	</head>
 	
-	<body onload="loadDoc()">
-		<div style="text-align: center;padding-bottom:10px;">
-			<button class="btn" type="button" onclick="window.open('ajax.html?dd=0')">Time table</button>
-			<button class="btn" type="button" onclick="window.open('ajax.html?dd=1')">CV</button>
-		</div>
-		<div class="container" id="content">
-		
+	<body>
+		<div class="container-fluid">
+			<div id="tb">
+			
+			</div>
+			<div id="cv">
+			
+			</div>
 		</div>
 	</body>
 	
