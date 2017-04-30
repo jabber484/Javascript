@@ -10,7 +10,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-
+	<script src="./rainbow.js"></script>
 	<link rel="stylesheet" type="text/css" href="asset/animate.css">
 	<style>
 		body {
@@ -209,40 +209,44 @@
 	
 	<section class="banner">
 		<div class="container">
-			<h1 id="banner1" style="display:block;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
-			<h1 id="banner2" style="display:none;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
-			<h1 id="banner3" style="display:none;"><b>Magic is real<br>Magic is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+			<h1 id="banner1" style="display:block;position:relative;"><b><span class="rainbow">Magic is real</span><br>Banner 1 is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+			<h1 id="banner2" style="display:none;position:relative;"><b><span class="rainbow">Magic is real</span><br>Banner 2 is real in the sense that you can deceive other people into thinking magic is real</b></h1>
+			<h1 id="banner3" style="display:none;position:relative;"><b><span class="rainbow">Magic is real</span><br>Banner 3 is real in the sense that you can deceive other people into thinking magic is real</b></h1>
 		</div>
 	</section>
 	<script>
-		var val = 0;
-		var timea,timeb;
-		
-		function B(){
-			val=1000;
-			timeb = setInterval(function(){ 
-				document.getElementById("banner1").style.transform = "translate3d("+val+"px, 0, 0)";
-				val=val-20;
-				if(val==0){
-					clearInterval(timeb);
-					A();
-				}	
-			},10);			
+		//document.getElementById("banner1").style.transform = "translate3d(600px, 0, 0)";
+		var maxban = 3;
+		var currentban = 1;
+		function banner(){
+			$("#banner"+currentban).animate({left: "-3000px"},1000);
+			setTimeout(function(){
+				$("#banner"+currentban).css("display","none");
+				currentban = currentban%maxban+1;
+				$("#banner"+currentban).css("display","block");
+				$("#banner"+currentban).css("left","3000px");
+				$("#banner"+currentban).animate({left: "0px"},800);
+			},1000);	
 		}
-		
-		function A(){
-		setTimeout(function(){ 
-			timea = setInterval(function(){ //B1 go left
-				document.getElementById("banner1").style.transform = "translate3d("+val+"px, 0, 0)";
-				val=val-20;
-				if(val==-3000){
-					clearInterval(timea);
-					B();
-				}	
-			},10);	
-		},6000);
-		}
-		A();
+		setInterval(banner,8000);
+				
+		$('span.rainbow').each(function(){
+			$(this).rainbow({	
+			colors: [
+				'#FF0000',
+				'#f26522',
+				'#fff200',
+				'#00a651',
+				'#28abe2',
+				'#2e3192',
+				'#6868ff',
+				'#ffffff'
+			],
+			animate: true,
+			animateInterval: 100,
+			pad: true,
+			pauseLength: 100,
+		});});		
 	</script>
 	
 	<section class="info" style="background-color: lightblue;">
