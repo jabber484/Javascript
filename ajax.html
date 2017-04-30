@@ -10,21 +10,15 @@
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	
-		<script>		
-		$(document).ready(function(){
-			$.ajax({url: "timetable.txt", success: function(result){
-				$("#tb").html(result);
-			}});
-			$.ajax({url: "cv.txt", success: function(result){
-				$("#cv").html(result);
-			}});
-		});
-		</script>		
+		
 	</head>
 	
-	<body>
+	<body>		
 		<div class="container-fluid">
+			<div class="container">
+				<button class="btn tb-btn" type="button">TimeTable</button>
+				<button class="btn cv-btn" type="button">CV</button>
+			<div>
 			<div id="tb">
 			
 			</div>
@@ -32,6 +26,32 @@
 			
 			</div>
 		</div>
+		<script>
+		$(".cv-btn").click(function(){
+			$("#cv").html("");
+			setTimeout(function(){load(1);},2000);
+		});
+		$(".tb-btn").click(function(){
+			$("#tb").html("");
+			setTimeout(function(){load(0);},2000);
+		});
+		
+		function load(x){
+		if(x==1){
+			$.ajax({url: "cv.txt", success: function(result){
+				$("#cv").html(result);
+			}});
+		} else {	
+		$.ajax({url: "timetable.txt", success: function(result){
+				$("#tb").html(result);
+			}});
+		}}
+		
+		$(function(){
+			load(1);	
+			load(0);
+		});	
+		</script>			
 	</body>
 	
 </html>	
