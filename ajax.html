@@ -37,15 +37,10 @@
 		});
 		
 		function load(x){
-		if(x==1){
-			$.ajax({url: "cv.txt", success: function(result){
-				$("#cv").html(result);
-			}});
-		} else {	
-		$.ajax({url: "timetable.txt", success: function(result){
-				$("#tb").html(result);
-			}});
-		}}
+		if(x==1) $("#cv").load("cv.txt");
+		else $("#tb").load("timetable.txt");
+			};
+
 		
 		$(function(){
 			load(1);	
