@@ -37,10 +37,17 @@
 		});
 		
 		function load(x){
-		if(x==1) $("#cv").load("cv.txt");
-		else $("#tb").load("timetable.txt");
-			};
-
+		if(x==1) 
+			$("#cv").load("cv.txt", function(response,status,xhr){
+				if(status == "error")
+					alert("Error loading file!");
+			});	
+		else 
+			$("#tb").load("timetable.txt",function(response,status,xhr){
+				if(status == "error")
+					alert("Error loading file!");			
+			});
+		}
 		
 		$(function(){
 			load(1);	
